@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FarmeService } from './pages/farm/farm.service';
 import { MessageService } from 'primeng/api';
+import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { MessageService } from 'primeng/api';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     PrimeNGModule,
     FarmModule,
     HttpClientModule,
-
+    CoreModule
 
   ],
 
