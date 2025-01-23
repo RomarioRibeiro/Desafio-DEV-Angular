@@ -3,7 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Primeng } from './primeng.module';
+import { PrimeNGModule } from './primeng.module';
+import { FarmModule } from './pages/farm/farm.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { FarmeService } from './pages/farm/farm.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -12,9 +17,14 @@ import { Primeng } from './primeng.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Primeng
+    PrimeNGModule,
+    FarmModule,
+    HttpClientModule,
+
+
   ],
-  providers: [],
+
+  providers: [FarmeService,  MessageService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
