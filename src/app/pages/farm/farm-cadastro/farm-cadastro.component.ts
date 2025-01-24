@@ -27,7 +27,7 @@ export class FarmCadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Cadastro Convênio');
+    this.title.setTitle('Cadastro Farm');
     this.idFarm = this.route.snapshot.params['id'];
     if (this.idFarm) {
       this.carregarFarm(this.idFarm);

@@ -27,10 +27,11 @@ export class AnimalService {
     ).then((response) => response as Animal);
   }
 
-  buscarPorId(id: number) {
-    return firstValueFrom(this.http.get(`${this.animalURL}/${id}`)).then(
-      (response) => response as Animal
-    );
+  buscarPorId(id: number): Promise<Animal> {
+    return firstValueFrom(this.http.get<Animal>(`${this.animalURL}${id}`))
+    .then((response: any) =>  {
+      return response
+    });
   }
 
   listar(): Promise<any> {
@@ -52,6 +53,20 @@ export class AnimalService {
       element.datagravacao = moment(element.datagravacao, 'YYYY/MM/DD H:mm')
         .tz('America/Sao_Paulo')
         .toDate();
+    });
+  }
+
+  convertStringDate(obj: any[]) {
+    obj.forEach((element) => {
+      // Certifique-se de que o formato da string de data está correto
+      const dateFormat = 'YYYY/MM/DD H:mm';
+
+      // Verifique se a data não é nula ou indefinida antes de tentar convertê-la
+      if (element.datagravacao) {
+        element.datagravacao = moment(element.datagravacao, dateFormat)
+          .tz('America/Sao_Paulo')
+          .toDate();
+      }
     });
   }
 

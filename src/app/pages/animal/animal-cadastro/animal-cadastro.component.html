@@ -1,0 +1,37 @@
+<main>
+  <p-card styleClass="card-adjust">
+      <div class="mb-3">
+          <span class="title colorTitle">Cadastro de Animal</span>
+      </div>
+      <div class="flex justify-content-start mb-2">
+          <button pButton type="button" class="p-button-primary" icon="pi pi-arrow-left" pTooltip="Voltar" routerLink="/animal" ></button>
+      </div>
+
+      <form #formAnimal="ngForm" (ngSubmit)="salvar(formAnimal)">
+
+        <div class="grid flex flex-wrap justify-content-center ">
+          <div class="col-12 md:col-6 lg:col-3">
+              <span>Name</span>
+              <input type="text" name="name" #name="ngModel" [(ngModel)]="animal.name" pInputText class="w-full"  [required]="true" minlength="2" maxlength="60">
+          </div>
+          <div class="col-12 md:col-6 lg:col-3">
+              <span>Tag</span>
+              <input type="text" name="tag" #tag="ngModel" [(ngModel)]="animal.tag" pInputText class="w-full"  [required]="true" minlength="2" maxlength="60">
+          </div>
+          <div class="col-12 md:col-6 lg:col-3">
+              <span>Farm</span>
+              <p-dropdown styleClass="dropdown" name="operador" [autoDisplayFirst]="false" #operador="ngModel" filter="true"
+            [options]="farms" [virtualScroll]="true" [itemSize]="30" optionLabel="label"
+            [(ngModel)]="selectedFarm" placeholder="Selecione..." [emptyFilterMessage]="messageDrop"
+            [showClear]="true" required></p-dropdown>
+          </div>
+      </div>
+
+      <div class="flex flex-wrap justify-content-center mt-4">
+        <div class="col-12 md:col-6 lg:col-3">
+            <button pButton type="submit" class="p-button-primary w-full" icon="pi pi-save" [disabled]="formAnimal.invalid || salvando " pTooltip="Salvar" label="Salvar"></button>
+        </div>
+      </div>
+      </form>
+  </p-card>
+</main>

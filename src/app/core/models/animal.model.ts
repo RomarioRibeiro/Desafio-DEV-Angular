@@ -3,6 +3,6 @@ export class Animal {
   id?: number
   name?: string
   tag?: string
-
+  farmId: number
   farm = new Farm()
 }

@@ -2,36 +2,71 @@ import { InputTextModule } from 'primeng/inputtext';
 import { NgModule } from "@angular/core";
 
 
-import { FormsModule } from "@angular/forms";
 import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { TooltipModule } from 'primeng/tooltip';
 import { SidebarModule } from 'primeng/sidebar';
 import { AccordionModule } from 'primeng/accordion';
-import { SplitterModule } from 'primeng/splitter';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { TableModule } from 'primeng/table';
-import { CommonModule } from '@angular/common';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { DialogModule } from 'primeng/dialog';
+import { CardModule } from 'primeng/card';
+import { FormsModule } from '@angular/forms';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
+import { CommonModule } from "@angular/common";
+import { PasswordModule } from 'primeng/password';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from "primeng/api";
+import { InputMaskModule } from 'primeng/inputmask';
+import { DropdownModule } from 'primeng/dropdown';
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { TabViewModule } from 'primeng/tabview';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DividerModule } from 'primeng/divider';
+import { PaginatorModule } from 'primeng/paginator';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SplitButtonModule } from 'primeng/splitbutton';
 
 @NgModule({
 exports: [
-FormsModule,
-ButtonModule,
-CardModule,
-InputTextModule,
-AvatarGroupModule,
-AvatarModule,
-SidebarModule,
-AccordionModule,
-SplitterModule,
-SplitButtonModule,
-TableModule,
-CommonModule,
-ToastModule,
-ConfirmDialogModule
+  FormsModule,
+        CommonModule,
+        MessagesModule,
+        MessagesModule,
+        ToastModule,
+        ButtonModule,
+        AvatarModule,
+        AvatarGroupModule,
+        TooltipModule,
+        SidebarModule,
+        AccordionModule,
+        OverlayPanelModule,
+        DialogModule,
+        CardModule,
+        InputTextModule,
+        InputSwitchModule,
+        ProgressSpinnerModule,
+        PasswordModule,
+        ConfirmDialogModule,
+        InputMaskModule,
+        DropdownModule,
+        ButtonModule,
+        TableModule,
+        PanelModule,
+        TabViewModule,
+        TreeSelectModule,
+        InputNumberModule,
+        DividerModule,
+        PaginatorModule,
+        CalendarModule,
+        InputTextareaModule,
+        SplitButtonModule
 ]
 })
 
