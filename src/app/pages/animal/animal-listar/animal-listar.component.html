@@ -12,10 +12,7 @@
             tooltipPosition="top" icon="pi pi-refresh" (click)="refresh()"></button>
         </div>
       </div>
-      <div>
-        <p-splitButton styleClass="btnAlternaAtivos" #ua label="Opções" icon="pi pi-cog"
-          (onClick)="ua.onDropdownButtonClick(null)" [model]="items"></p-splitButton>
-      </div>
+
     </div>
 
     <p-table #tabela [value]="convenios" [columns]="cols" [globalFilterFields]="cols"
