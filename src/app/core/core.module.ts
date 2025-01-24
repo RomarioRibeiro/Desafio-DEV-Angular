@@ -3,6 +3,7 @@ import { LayoutComponent } from "./layout/layout.component";
 import { NavbarComponent } from "./layout/navbar/navbar.component";
 import { PrimeNGModule } from "../primeng.module";
 import { RouterModule } from "@angular/router";
+import { ConfirmationService } from "primeng/api";
 
 
 @NgModule({
@@ -11,7 +12,9 @@ imports: [
 PrimeNGModule,
 RouterModule,
 ],
-providers: [],
+providers: [
+  ConfirmationService
+],
 exports: [LayoutComponent]
 })
 

@@ -1,11 +1,11 @@
 <main>
   <p-card styleClass="card-adjust">
-    <h4>Farm</h4>
+    <h4>Animal</h4>
     <div class="flex justify-content-between mb-2">
       <div class="flex justify-content-start mb-2">
         <div>
           <button pButton pRipple type="button" class="p-button-raised p-button-primary" icon="pi pi-plus" pTooltip="Novo"
-            tooltipPosition="top" routerLink="/farm/novo"></button>
+            tooltipPosition="top" routerLink="/animal/novo"></button>
         </div>
         <div>
           <button pButton pRipple type="button" class="p-button-raised p-button-primary ml-2" pTooltip="Atualizar"
@@ -45,15 +45,15 @@
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-farm let-columns="columns" let-rowData>
+      <ng-template pTemplate="body" let-animal let-columns="columns" let-rowData>
         <tr [pSelectableRow]="rowData">
           <td class="btnEditar">
             <button pButton pRipple type="button" class="p-button-raised p-button-primary" pTooltip="Editar"
-              icon="pi pi-pencil" tooltipPosition="top" [routerLink]="['/farm', farm.id]">
+              icon="pi pi-pencil" tooltipPosition="top" [routerLink]="['/animal', animal.id]">
             </button>
             <button pButton type="button" class="botao p-button-raised p-button-primary"
               icon="pi pi-trash" class="p-button-danger"
-              (click)="excluirFarm(farm.id)">
+              (click)="excluirFarm(animal.id)">
             </button>
           </td>
 

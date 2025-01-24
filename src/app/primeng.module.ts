@@ -13,6 +13,8 @@ import { SplitterModule } from 'primeng/splitter';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
 exports: [
@@ -27,8 +29,9 @@ AccordionModule,
 SplitterModule,
 SplitButtonModule,
 TableModule,
-CommonModule
-
+CommonModule,
+ToastModule,
+ConfirmDialogModule
 ]
 })
 

@@ -1,16 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { FarmeService } from '../farm.service';
-
+import { AnimalService } from '../animal.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-farm-listar',
-  templateUrl: './farm-listar.component.html',
-  styleUrls: ['./farm-listar.component.css']
+  selector: 'app-animal-listar',
+  templateUrl: './animal-listar.component.html',
+  styleUrls: ['./animal-listar.component.css']
 })
-export class FarmListarComponent implements OnInit {
+export class AnimalListarComponent implements OnInit {
 
   @ViewChild('tabela') table: Table;
   rowsPerPageTable: number[] = [10, 25, 50, 100, 200, 500];
@@ -22,10 +21,10 @@ export class FarmListarComponent implements OnInit {
   valorTooltip = 'Inativos';
 
   constructor(
+    private animalService: AnimalService,
     private title: Title,
-    private farmService: FarmeService,
-    private confirmationService: ConfirmationService, // Para confirmação
-    private messageService: MessageService // Para mensagens ao usuário
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -40,7 +39,7 @@ export class FarmListarComponent implements OnInit {
   }
 
   carregarFarm() {
-    this.farmService.listar()
+    this.animalService.listar()
       .then((obj) => {
         this.convenios = obj;
        // this.convenios = this.validationService.formataAtivoeInativo(this.convenios);
@@ -57,12 +56,11 @@ export class FarmListarComponent implements OnInit {
     this.table.clear();
   }
 
-
   excluirFarm(id: number) {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir este item?',
       accept: () => {
-        this.farmService.excluir(id)
+        this.animalService.excluir(id)
           .then(() => {
             this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Item excluído com sucesso!' });
             this.carregarFarm(); // Atualiza a lista após exclusão
@@ -73,4 +71,5 @@ export class FarmListarComponent implements OnInit {
       }
     });
   }
+
 }

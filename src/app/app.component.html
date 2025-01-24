@@ -1,3 +1,14 @@
 <app-layout *ngIf="exibindoNavBar()"></app-layout>
 
 <router-outlet></router-outlet>
+
+<p-toast position="bottom-right" styleClass="p-toast-message"></p-toast>
+
+<p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle" #confirmacao>
+  <p-footer>
+    <button type="button" pButton pRipple icon="pi pi-check" label="Sim" (click)="confirmacao.accept()"
+      class="p-button-success"></button>
+    <button type="button" pButton pRipple icon="pi pi-times" label="Não" (click)="confirmacao.reject()"
+      class="p-button-secondary"></button>
+  </p-footer>
+</p-confirmDialog>

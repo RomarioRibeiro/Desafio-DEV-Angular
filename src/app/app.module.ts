@@ -11,6 +11,7 @@ import { FarmeService } from './pages/farm/farm.service';
 import { MessageService } from 'primeng/api';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimalService } from './pages/animal/animal.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
 
-  providers: [FarmeService,  MessageService,],
+  providers: [FarmeService, AnimalService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
