@@ -9,6 +9,10 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { SidebarModule } from 'primeng/sidebar';
 import { AccordionModule } from 'primeng/accordion';
+import { SplitterModule } from 'primeng/splitter';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
 exports: [
@@ -19,7 +23,11 @@ InputTextModule,
 AvatarGroupModule,
 AvatarModule,
 SidebarModule,
-AccordionModule
+AccordionModule,
+SplitterModule,
+SplitButtonModule,
+TableModule,
+CommonModule
 
 ]
 })

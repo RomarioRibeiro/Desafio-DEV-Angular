@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { FarmCadastroComponent } from "./farm-cadastro/farm-cadastro.component";
+import { FarmListarComponent } from "./farm-listar/farm-listar.component";
 
 const routes: Routes = [
   {
@@ -8,6 +9,9 @@ const routes: Routes = [
   },
   {
       path: ':id', component: FarmCadastroComponent
+  },
+  {
+    path: '', component: FarmListarComponent
   }
 ]
 
